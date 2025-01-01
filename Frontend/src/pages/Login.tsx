@@ -35,14 +35,13 @@ const Login = () => {
         <img src={SignInBg} className='absolute inset-0 w-full h-full z-0' />
 
       <div className='absolute inset-0 z-96 flex justify-center items-center w-full h-screen'>
-        <div className='bg-white/10 backdrop-blur-lg w-96 h-96 p-4'>
+        <div className='bg-white/10 backdrop-blur-lg w-4/5 md:w-1/4 h-fit p-4'>
             <div className='flex justify-center mb-4'>
                 <h1 className='flex justify-center items-start text text-2xl font-serif text-black '>Login</h1>
             </div>
             <div className='flex justify-center items-center flex-col gap-5 p-4'>
-                <input placeholder='Email'onChange={onChange} name="email" className= 'placeholder-gray-900 p-4 w-72 rounded-full  border-white border-2 bg-transparent'/>
-                <input type='password' placeholder='Password'onChange={onChange} name="password" className='placeholder-gray-900 p-4 w-72 rounded-full  border-white border-2 bg-transparent'/>
-                <p className='text-white'>Forgot Password?</p>
+                <input placeholder='Email'onChange={onChange} name="email" className= 'placeholder-gray-900 p-4 w-4/5 rounded-full  border-white border-2 bg-transparent'/>
+                <input type='password' placeholder='Password'onChange={onChange} name="password" className='placeholder-gray-900 p-4 w-4/5 rounded-full  border-white border-2 bg-transparent'/>
             </div>
 
             <div className='flex justify-center'>

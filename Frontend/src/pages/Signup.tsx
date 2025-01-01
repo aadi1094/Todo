@@ -39,14 +39,14 @@ const Signup = () => {
         <img src={SignInBg} className='absolute inset-0 w-full h-full z-0' />
 
       <div className='absolute inset-0 z-96 flex justify-center items-center w-full h-screen'>
-        <div className='bg-white/10 backdrop-blur-lg w-96 h-96 p-4'>
+        <div className='bg-white/10 backdrop-blur-lg w-4/5 md:w-1/4 h-fit p-4'>
             <div className='flex justify-center mb-2'>
                 <h1 className='flex justify-center items-start text text-2xl font-serif text-black '>Signup</h1>
             </div>
             <div className='flex justify-center items-center flex-col gap-5 p-4'>
-                <input placeholder='Username'onChange={onChange} name="username" className='placeholder-gray-900 p-3 w-72 rounded-full  border-white border-2 bg-transparent'/>
-                <input placeholder='Email'onChange={onChange} name="email" className='placeholder-gray-900 p-3 w-72 rounded-full  border-white border-2 bg-transparent'/>
-                <input type='password' placeholder='Password'onChange={onChange} name="password" className='placeholder-gray-900 p-3 w-72 rounded-full  border-white border-2 bg-transparent'/>
+                <input placeholder='Username'onChange={onChange} name="username" className='placeholder-gray-900 p-3 w-4/5 rounded-full  border-white border-2 bg-transparent'/>
+                <input placeholder='Email'onChange={onChange} name="email" className='placeholder-gray-900 p-3 w-4/5 rounded-full  border-white border-2 bg-transparent'/>
+                <input type='password' placeholder='Password'onChange={onChange} name="password" className='placeholder-gray-900 p-3 w-4/5 rounded-full  border-white border-2 bg-transparent'/>
                 
             </div>
 
@@ -55,7 +55,7 @@ const Signup = () => {
             </div>
             <div className='flex justify-center pt-2'>
                 <p className='pt-1 text-white'>Already have account?  </p>
-                <a href='/login'><button  className='text underline px-2 text-white ' >Login</button></a>
+                <a href='/'><button  className='text underline px-2 text-white ' >Login</button></a>
             </div>
 
         </div>

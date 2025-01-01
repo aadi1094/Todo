@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const ShowTodos = () => {
     const[showTodo,setShowTodo]=useState<any[]>([
@@ -24,7 +24,7 @@ const ShowTodos = () => {
     const onCheckChanged=async(id:string)=>{
         try {
             const token=localStorage.getItem("token")
-            const res=await axios.post(`http://localhost:6969/todo/completeTodo/${id}`,{},{
+            await axios.post(`http://localhost:6969/todo/completeTodo/${id}`,{},{
                 headers:{
                     token
                 }
@@ -38,7 +38,7 @@ const ShowTodos = () => {
     const onDelete=async(id:string)=>{
         try {
             const token=localStorage.getItem("token")
-            const res=await axios.delete(`http://localhost:6969/todo/deleteTodo/${id}`,{
+            await axios.delete(`http://localhost:6969/todo/deleteTodo/${id}`,{
                 headers:{
                     token
                 }

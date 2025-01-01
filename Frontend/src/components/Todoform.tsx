@@ -37,7 +37,7 @@ const Todoform = () => {
     const addTodo=async()=>{
         try {
             const token=localStorage.getItem("token")
-            const result=await axios.post("http://localhost:6969/todo/add",todoData,{
+            await axios.post("http://localhost:6969/todo/add",todoData,{
                 headers:{
                     token
                 }
