@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import SignInBg from "../assets/Signin_BG.jpg"
 import axios from 'axios'
 import {  useNavigate } from 'react-router-dom'
+
+const API = import.meta.env.VITE_API_URL
+
 const Login = () => {
     const [formdata, setFormdata] = useState({
         email:"",
@@ -18,7 +21,7 @@ const Login = () => {
 
     const onSubmit = async () => {
         try{
-            const res = await axios.post('http://localhost:6969/user/login',formdata);
+            const res = await axios.post(`${API}/user/login`,formdata);
             const data = res.data
             localStorage.setItem('token', data.token)
             navigate("/dashboard")

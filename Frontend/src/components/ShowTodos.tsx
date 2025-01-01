@@ -1,6 +1,8 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 
+const API = import.meta.env.VITE_API_URL
+
 const ShowTodos = () => {
     const[showTodo,setShowTodo]=useState<any[]>([
         
@@ -9,7 +11,7 @@ const ShowTodos = () => {
     const fetch=async()=>{
         try {
             const token=localStorage.getItem("token")
-            const result=await axios.get("http://localhost:6969/todo/getAllTodo",{
+            const result=await axios.get(`${API}/todo/getAllTodo`,{
                 headers:{
                     token
                 }
@@ -24,7 +26,7 @@ const ShowTodos = () => {
     const onCheckChanged=async(id:string)=>{
         try {
             const token=localStorage.getItem("token")
-            await axios.post(`http://localhost:6969/todo/completeTodo/${id}`,{},{
+            await axios.post(`${API}/todo/completeTodo/${id}`,{},{
                 headers:{
                     token
                 }
@@ -38,7 +40,7 @@ const ShowTodos = () => {
     const onDelete=async(id:string)=>{
         try {
             const token=localStorage.getItem("token")
-            await axios.delete(`http://localhost:6969/todo/deleteTodo/${id}`,{
+            await axios.delete(`${API}/todo/deleteTodo/${id}`,{
                 headers:{
                     token
                 }
