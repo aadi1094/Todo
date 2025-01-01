@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 
 
-
+const API = import.meta.env.VITE_API_URL
 const Todoform = () => {
     const[todoData,setTodoData]=useState({
         title:"",
@@ -37,7 +37,7 @@ const Todoform = () => {
     const addTodo=async()=>{
         try {
             const token=localStorage.getItem("token")
-            await axios.post("http://localhost:6969/todo/add",todoData,{
+            await axios.post(`${API}/todo/add`,todoData,{
                 headers:{
                     token
                 }

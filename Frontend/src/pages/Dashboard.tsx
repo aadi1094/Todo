@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Todoform from "../components/Todoform";
 import ShowTodos from "../components/ShowTodos";
 
-
+const API = import.meta.env.VITE_API_URL
 const Dashboard = () => {
 
   const[user,setUser]=useState({
@@ -18,7 +18,7 @@ const Dashboard = () => {
       const token=localStorage.getItem("token")
       if(!token) navigate("/")
 
-      const result=await axios.get("http://localhost:6969/user/getuserinfo",{
+      const result=await axios.get(`${API}/user/getuserinfo`,{
         headers:{
           token
         }
