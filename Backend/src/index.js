@@ -28,6 +28,9 @@ app.use(cors())
 app.use("/user",userRouter)
 app.use("/todo",authenticate,todoRouter)
 
+app.get("/", (req, res)=>{
+    res.send("Hello")
+})
 
 
 app.listen(6969,()=>{
