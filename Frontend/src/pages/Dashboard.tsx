@@ -49,10 +49,14 @@ const Dashboard = () => {
           </div>
         </div>
       </header>
-      <div className="w-1/2 mx-auto bg-[#E5ADC3] min-h-[80vh] relative p-3 rounded-lg mt-3">
+        <div className="w-1/2 text-center p-2 font-mono mx-auto md:text-xl text-white">{new Date().toDateString()}</div>
+      <div className="w-full md:w-1/2 mx-auto bg-[#E5ADC3] min-h-[70vh] relative p-3 rounded-lg mt-3">
         <Todoform/>
         <ShowTodos/>
       </div>
+      <footer className="text-center font-bold text-white">
+        &copy;Aditya Chawale❤️
+      </footer>
     </div>
   );
 };

@@ -41,3 +41,30 @@ export const getAllTodo=async(req,res)=>{
         res.status(500).send("Don't have Todos")
     }
 }
+
+export const completeTodo=async(req,res)=>{
+    try {
+       const id=req.params.id
+       const existingTodo=await todos.findById(id) 
+       await todos.findByIdAndUpdate(id,{
+        complete:!existingTodo.complete  
+       })
+       return res.status(200).json({
+        message:"Todo completed"
+       })
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export const deleteTodo=async(req,res)=>{
+    try {
+       const id=req.params.id
+       await todos.findByIdAndDelete(id)
+       return res.status(200).json({
+        message:"Todo Deleted"
+       })
+    } catch (error) {
+        console.log(error)
+    }
+}

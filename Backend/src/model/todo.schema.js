@@ -12,7 +12,12 @@ const todoSchema=new mongoose.Schema({
     userID:{
         type:mongoose.Types.ObjectId,
         ref:"User"
+    },
+    complete:{
+        type:Boolean,
+        default:false
     }
+
 })
 
 const todos=mongoose.model("todos",todoSchema)

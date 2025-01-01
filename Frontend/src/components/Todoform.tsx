@@ -52,7 +52,7 @@ const Todoform = () => {
     }
   return (
     <div>
-        <button className=' absolute bottom-16 right-16 w-12 h-12 bg-pink-400 rounded-full text-2xl 'onClick={onAdd}>+</button>
+        <button className=' absolute bottom-8 md:bottom-16 right-8 md:right-16 w-12 h-12 bg-pink-400 rounded-full text-2xl 'onClick={onAdd}>+</button>
         {
             add && <div className='flex flex-col gap-4 mt-4'>
             <input name='title'onChange={onChange} placeholder='Enter title' className='p-2 rounded-lg placeholder:text-gray-700 font-serif text-2xl'/>
