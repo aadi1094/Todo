@@ -52,8 +52,7 @@ const Login = () => {
             </div>
             <div className='flex justify-center pt-2'>
                 <p className='pt-1 text-white'>Don't have account?  </p>
-                <a href='/signup'><button className='text underline px-2 text-white' >Signup</button></a>
-                <button onClick={()=>{
+                <button className='text underline px-2 text-white' onClick={()=>{
                     navigate("/signup")
                 }}>Signup</button>
             </div>

@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const API = import.meta.env.VITE_API_URL
 
@@ -7,6 +8,8 @@ const ShowTodos = () => {
     const[showTodo,setShowTodo]=useState<any[]>([
         
     ])
+    const navigate = useNavigate()
+
 
     const fetch=async()=>{
         try {
@@ -31,7 +34,7 @@ const ShowTodos = () => {
                     token
                 }
             })
-            window.location.reload()
+            navigate("/dashboard")
         } catch (error) {
            console.error(error) 
         }
@@ -45,7 +48,7 @@ const ShowTodos = () => {
                     token
                 }
             })
-            window.location.reload()
+            navigate("/dashboard")
         } catch (error) {
            console.error(error) 
         }

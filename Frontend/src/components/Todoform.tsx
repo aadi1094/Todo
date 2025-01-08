@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 
 const API = import.meta.env.VITE_API_URL
@@ -8,6 +9,7 @@ const Todoform = () => {
         title:"",
         time:""
     })
+    const navigate = useNavigate()
 
     const[add,setAdd]=useState(false)
 
@@ -44,7 +46,7 @@ const Todoform = () => {
             }
             )
             alert("Todo created")
-            window.location.reload()
+            navigate("/dashboard")
 
         } catch (error) {
            console.log(error) 
